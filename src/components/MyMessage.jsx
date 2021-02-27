@@ -1,10 +1,6 @@
 import React from 'react';
 
-
-
-const ChatFeed = (props) => {
-console.log(props);
-
+const MyMessage = () => {
     return (
         <div>
             
@@ -12,4 +8,4 @@ console.log(props);
     );
 };
 
-export default ChatFeed;
+export default MyMessage;
