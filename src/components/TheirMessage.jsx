@@ -1,9 +1,21 @@
 import React from 'react';
 
-const TheirMessage = () => {
+const TheirMessage = ({ message, lastMessage}) => {
+
+    if(message?.attatchements?.length > 0) {
+            return (
+                <img 
+                src={message.attatchements[0].file}
+                alt="message-attatchement"
+                className="message-image"
+                style={{ float: 'right'}}
+                />
+            );
+    }
+
     return (
         <div>
-            Their Message
+          
         </div>
     );
 };
