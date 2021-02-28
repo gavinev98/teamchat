@@ -14,10 +14,10 @@ const MyMessage = ({ message }) => {
         );
     }
 
-    
+
     return (
-        <div>
-               
+        <div className="message" style={{ float: 'right', marinRight: '18px', color: 'white' , backgroundColor : '#3B2A50'}}>
+           {message.text}    
         </div>
     );
 };
