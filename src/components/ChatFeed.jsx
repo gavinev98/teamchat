@@ -10,6 +10,24 @@ const ChatFeed = (props) => {
     //finding the current active chat,
     const chatActive = chats && chats[activeChat];
 
+    //generating messages
+    const renderMessages = () => {
+        //this will bring back the ids of specific messages as an array.
+        const keys = Object.keys(messages);
+        //return array of messages via loop via map.
+        return keys.map((key, index) => {
+            //once we loop over we set message equal to current message.
+            const message = messages[key];
+            //we need to check if this is the last message sent. 
+            //We are checking if there is message 'if index is 0 then there is none otherwise we find last key.
+            const lastMessageKey = index == 0 ? null : keys[index - 1];
+
+            const isMyMessage
+        })
+    }
+
+    
+
     return (
         <div>
           
