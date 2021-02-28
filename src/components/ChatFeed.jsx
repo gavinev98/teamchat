@@ -44,12 +44,16 @@ const ChatFeed = (props) => {
 
     if(!chatActive) return 'Loading...'
 
-    
+
     return (
         <div className="chat-feed">
             <div className="chat-title-container">
                 <div className="chat-title">{chatActive.title}</div>
+                <div className="chat-subtitle">
+                    {chatActive.people.map((person) => ` ${person.person.username}`)}
+                </div>
             </div>
+           {renderMessages()}
         </div>
     );
 };
