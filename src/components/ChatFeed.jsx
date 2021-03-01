@@ -10,6 +10,8 @@ const ChatFeed = (props) => {
     //finding the current active chat,
     const chatActive = chats && chats[activeChat];
 
+    console.log(props);
+
     //generating messages
     const renderMessages = () => {
         //this will bring back the ids of specific messages as an array.

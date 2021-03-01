@@ -20,10 +20,10 @@ const TheirMessage = ({ message, lastMessage}) => {
                 src={message.attatchements[0].file}
                 alt="message-attatchement"
                 className="message-image"
-                style={{ float: 'right'}}
+                style={{ marginLeft : isFirstMessageByUser ? '4px' : '48px'}}
                 />
             ) : (
-                <div className="message" style={{ float: 'right', marinRight: '18px', color: 'white' , backgroundColor : '#3B2B50'}}>
+                <div className="message" style={{ float: 'left', color: 'white' , backgroundColor : '#3B2B50', marginLeft : isFirstMessageByUser ? '4px' : '48px'}}>
                 {message.text}    
              </div>
             )
