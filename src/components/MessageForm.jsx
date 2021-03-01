@@ -10,9 +10,6 @@ const MessageForm = (props) => {
     //creating state property for input textbox
     const [value , setValue] = useState('');
 
-    //store state of image
-    const[attatchement, setAttatchement] = useState({});
- 
 
     //handling the submit of sending a message.
     const handleSubmit = (event) => {
@@ -41,7 +38,9 @@ const MessageForm = (props) => {
     }
 
     //handling upload of image
-    const handleUpload = () => {
+    const handleUpload = (event) => {
+
+        sendMessage(creds, chatId, { files: event.target.value, text: '' })
 
     }
 
@@ -67,7 +66,9 @@ const MessageForm = (props) => {
                 style={{ display: 'none'}}
                 onChange={handleUpload}
             />
-
+            <button type="submit" className="send-button">
+                <SendOutlined className="send-icon" />
+            </button>
         </form>
     );
 };
