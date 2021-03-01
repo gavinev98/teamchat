@@ -23,7 +23,7 @@ const TheirMessage = ({ message, lastMessage}) => {
                 style={{ float: 'right'}}
                 />
             ) : (
-                <div className="message" style={{ float: 'right', marinRight: '18px', color: 'white' , backgroundColor : '#3B2A50'}}>
+                <div className="message" style={{ float: 'right', marinRight: '18px', color: 'white' , backgroundColor : '#3B2B50'}}>
                 {message.text}    
              </div>
             )
