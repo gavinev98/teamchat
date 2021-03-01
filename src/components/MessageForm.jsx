@@ -6,13 +6,24 @@ const MessageForm = (props) => {
     //destructure props recieved
     const { chatId, creds } = props;
 
+    
+
     //creating state property for input textbox
     const [value , setValue] = useState('');
  
 
     //handling the submit of sending a message.
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
+        //this is to stop page from refreshing.
+        event.preventDefault();
 
+        //trimming text of message
+        const text = value.trim();
+
+        if(text.length > 0) {
+            //we pass credentials, chatId, and text value.
+            sendMessage(creds, chatId, { text });
+        }
     }
 
     //handling the change of a message.
