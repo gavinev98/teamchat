@@ -23,6 +23,9 @@ const MessageForm = (props) => {
         if(text.length > 0) {
             //we pass credentials, chatId, and text value.
             sendMessage(creds, chatId, { text });
+
+            //clear input value 
+            setValue('');
         }
     }
 
