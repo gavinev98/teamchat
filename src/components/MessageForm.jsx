@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { sendMessage, isTyping } from 'react-chat-engine';
+import { SendOutlined, PictureOutlined } from '@ant-design/icons';
 
 const MessageForm = (props) => {
 
     //destructure props recieved
     const { chatId, creds } = props;
 
-    
-
     //creating state property for input textbox
     const [value , setValue] = useState('');
+
+    //store state of image
+    const[attatchement, setAttatchement] = useState({});
  
 
     //handling the submit of sending a message.
@@ -38,6 +40,11 @@ const MessageForm = (props) => {
        isTyping(creds, chatId);
     }
 
+    //handling upload of image
+    const handleUpload = () => {
+
+    }
+
 
     return (
         <form className="message-form" onSubmit={handleSubmit}>
@@ -48,6 +55,19 @@ const MessageForm = (props) => {
              onChange={handleChange}
              onSubmit={handleSubmit}
             />
+            <label htmlFor="upload-button">
+            <span className="image-button" >
+                <PictureOutlined className="picture-icon" />
+            </span>
+            </label>
+            <input 
+                type="file"
+                multiple={false}
+                id="upload-button"
+                style={{ display: 'none'}}
+                onChange={handleUpload}
+            />
+
         </form>
     );
 };
