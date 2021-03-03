@@ -12,6 +12,21 @@ const ChatFeed = (props) => {
 
     console.log(props);
 
+    //read receipts function to see if my message
+    const renderReadReceipts = (message, isMyMessage) => {
+        chatActive.people.map((person, index) => person.last_read === message.id && (
+            <div
+                key={`read_${index}`}
+                className="read-receipt"
+                style= {{
+                    float: isMyMessage ? 'right' : 'left',
+                    backgroundImage: person.person.avatar && `url(${person.person.avatar})`,
+                }}
+            />
+        ))
+    }
+
+
     //generating messages
     const renderMessages = () => {
         //this will bring back the ids of specific messages as an array.
@@ -36,7 +51,7 @@ const ChatFeed = (props) => {
                     }
                 </div>
                  <div className="read-receipts" style={{marginRight: isMyMessage ? '18px' : '0px' , marginLeft : isMyMessage ? '0px' : '68px' }}>
-                 read-receipts
+                 {renderReadReceipts(message, isMyMessage)}
                  </div>
                 </div>
             )
