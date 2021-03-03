@@ -37,7 +37,7 @@ const ChatFeed = (props) => {
             const message = messages[key];
             //we need to check if this is the last message sent. 
             //We are checking if there is message 'if index is 0 then there is none otherwise we find last key.
-            const lastMessageKey = index == 0 ? null : keys[index - 1];
+            const lastMessageKey = index === 0 ? null : keys[index - 1];
             //check if it is my message that has sent the message.
             const isMyMessage = userName === message.sender.username;
             
