@@ -12,7 +12,7 @@ const LoginForm = () => {
 
 
     //handle login
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         //prevent refresh from occuring.
         e.preventDefault();
 
@@ -27,11 +27,11 @@ const LoginForm = () => {
             localStorage.setItem('username', username);
             localStorage.setItem('password', password);
 
-            window.location.reload;
+            window.location.reload(true);
         
         } catch(error){
              //error => try with new username
-
+                console.log(error);
         }
     }
 
@@ -41,7 +41,7 @@ const LoginForm = () => {
                 <h1 className="title">Chat Application</h1>
                 <form onSubmit={handleSubmit}>
                     <input type="text" value={username} onchange={(e) => setUsername(e.target.value)} className="input" placeholder="username..." required />
-                    <input type="password" value={password} onchange={(e) => setPassword(e.target.value)}  placeholder="password..." required  />
+                    <input type="password" value={password} onchange={(e) => setPassword(e.target.value)} className="input"  placeholder="password..." required  />
                  <div align="center">
                     <button type="submit" className="button">
                         <span>Start Chatting</span>
