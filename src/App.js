@@ -7,7 +7,7 @@ const App = () => {
 
     const projectId = 'f135e1d0-8999-4545-b622-3954a72de173';
 
-    if(!localStorage.getItem('usernmame')) return <LoginForm />;
+    if(localStorage.length === 0) return <LoginForm />;
     
 
 
