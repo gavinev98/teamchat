@@ -10,6 +10,9 @@ const LoginForm = () => {
     //state for the password field
     const [password, setPassword] = useState('');
 
+    //set state for login error.
+    const [error, setError] = useState('');
+
 
     //handle login
     const handleSubmit = async (e) => {
@@ -28,10 +31,10 @@ const LoginForm = () => {
             localStorage.setItem('password', password);
 
             window.location.reload();
-        
+            setError('');
         } catch(error){
              //error => try with new username
-              alert('Please enter valid username and password!');
+              setError('Oops, incorrect credentials!');
         }
     }
 
@@ -47,6 +50,7 @@ const LoginForm = () => {
                         <span>Start Chatting</span>
                     </button>
                  </div>
+                 <h2 className="error">{error}</h2>
                 </form>
             </div>
             
